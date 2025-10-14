@@ -1,0 +1,46 @@
+{
+  "name": "rtsp-overlay-frontend",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Frontend for RTSP livestream overlay app built with React.",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "dependencies": {
+    "axios": "^1.7.3",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-scripts": "5.0.1",
+    "web-vitals": "^3.3.1"
+  },
+  "proxy": "http://localhost:5000",
+  "keywords": [
+    "react",
+    "flask",
+    "overlay",
+    "rtsp",
+    "livestream"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.1.14"
+  }
+}
