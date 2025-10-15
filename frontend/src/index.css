@@ -1,9 +1,8 @@
-/* frontend/src/index.css */
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Custom style for the draggable overlay */
 .overlay-draggable {
   cursor: grab;
   user-select: none;
@@ -11,5 +10,5 @@
 }
 
 .overlay-draggable:hover {
-  border: 2px solid #3b82f6 !important; /* Blue hover */
+  border: 2px solid #3b82f6 !important; 
 }

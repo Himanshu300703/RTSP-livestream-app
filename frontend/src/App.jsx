@@ -1,16 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import StreamVideoPlayer from './components/StreamVideoPlayer'; 
 import OverlayEditor from './components/OverlayEditor';
-// Assuming your Flask API is running on 5000
 const API_BASE_URL = 'http://localhost:5000/api/overlays';
-const HLS_STREAM_URL = 'http://localhost:8080/live/stream.m3u8'; // MUST BE CONVERTED STREAM
+const HLS_STREAM_URL = 'http://localhost:8080/live/stream.m3u8'; 
 
 function App() {
   const [overlays, setOverlays] = useState([]);
   const [selectedOverlay, setSelectedOverlay] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  // Fetch data (CRUD - Read)
   const fetchOverlays = async () => {
     setLoading(true);
     try {
@@ -23,7 +21,6 @@ function App() {
     setLoading(false);
   };
 
-  // Simplified CRUD handlers (to be passed to OverlayEditor)
   const handleSave = async (overlayData) => {
     const method = overlayData._id ? 'PUT' : 'POST';
     const url = overlayData._id ? `${API_BASE_URL}/${overlayData._id}` : API_BASE_URL;
@@ -73,11 +70,11 @@ function App() {
       </header>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-        {/* Video Stream Area (2/3 width) */}
+        {}
         <div className="lg:col-span-2 relative aspect-video shadow-xl rounded-lg overflow-hidden bg-gray-900">
           <StreamVideoPlayer hlsUrl={HLS_STREAM_URL} />
           
-          {/* Overlays Layer */}
+          {}
           {overlays.map((overlay) => (
             <div
               key={overlay._id}
@@ -89,7 +86,7 @@ function App() {
                 height: `${overlay.height}px`,
                 color: overlay.color || '#FFFFFF',
                 fontSize: overlay.fontSize || '18px',
-                lineHeight: 1, // Better for text alignment
+                lineHeight: 1, 
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
@@ -102,7 +99,7 @@ function App() {
           ))}
         </div>
 
-        {/* Overlay Editor/CRUD Panel (1/3 width) */}
+        {}
         <div className="lg:col-span-1 bg-white p-6 shadow-xl rounded-lg border border-gray-100">
           <h2 className="text-xl font-semibold mb-4 text-gray-700">Overlay Management (CRUD)</h2>
           <button 

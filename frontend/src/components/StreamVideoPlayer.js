@@ -1,4 +1,3 @@
-// frontend/src/components/StreamVideoPlayer.js
 import React, { useEffect, useRef } from 'react';
 import Hls from 'hls.js';
 
@@ -14,18 +13,15 @@ const StreamVideoPlayer = ({ hlsUrl }) => {
       hls.attachMedia(video);
 
       hls.on(Hls.Events.MANIFEST_PARSED, function() {
-        video.play(); // Auto-play the stream
+        video.play();
       });
 
-      // Basic error handling for the stream
       hls.on(Hls.Events.ERROR, function (event, data) {
         if (data.fatal) {
           console.error(`HLS Fatal Error: ${data.details}`, data);
-          // Optional: Re-create HLS instance on fatal error
         }
       });
     } else if (videoRef.current.canPlayType('application/vnd.apple.mpegurl')) {
-      // Fallback for native HLS support (e.g., Safari)
       videoRef.current.src = hlsUrl;
       videoRef.current.addEventListener('loadedmetadata', () => {
         videoRef.current.play();
@@ -33,7 +29,6 @@ const StreamVideoPlayer = ({ hlsUrl }) => {
     }
 
     return () => {
-      // Cleanup
       if (videoRef.current && videoRef.current.hls) {
         videoRef.current.hls.destroy();
       }
@@ -45,7 +40,7 @@ const StreamVideoPlayer = ({ hlsUrl }) => {
       <video 
         ref={videoRef} 
         className="w-full h-full object-cover" 
-        controls // Provides basic controls: play, pause, volume
+        controls
         poster="placeholder.jpg"
       />
     </div>

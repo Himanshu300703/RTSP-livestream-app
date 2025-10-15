@@ -1,4 +1,3 @@
-// frontend/src/components/OverlayEditor.js
 import React, { useState, useEffect } from 'react';
 
 const initialOverlay = { content: '', x: 0, y: 0, width: 0, height: 0, color: '#FFFFFF', fontSize: '18px' };
@@ -30,7 +29,7 @@ const OverlayEditor = ({ overlay, onSave, onDelete, onClose }) => {
         {formData._id ? `Editing Overlay: ${formData._id.substring(0, 5)}...` : 'New Overlay Details'}
       </h3>
       
-      {/* Content */}
+      {}
       <div>
         <label className="block text-sm font-medium text-gray-700">Content (Text/Logo Ref)</label>
         <input
@@ -43,7 +42,7 @@ const OverlayEditor = ({ overlay, onSave, onDelete, onClose }) => {
         />
       </div>
 
-      {/* Position and Size (CRUD attributes) */}
+      {}
       <div className="grid grid-cols-2 gap-4">
         <label className="block text-sm font-medium text-gray-700">X Position (px)</label>
         <input type="number" name="x" value={formData.x} onChange={handleChange} className="border p-2 rounded" />
@@ -58,7 +57,7 @@ const OverlayEditor = ({ overlay, onSave, onDelete, onClose }) => {
         <input type="number" name="height" value={formData.height} onChange={handleChange} className="border p-2 rounded" />
       </div>
 
-      {/* Style Options */}
+      {}
       <div className="grid grid-cols-2 gap-4">
         <label className="block text-sm font-medium text-gray-700">Text Color</label>
         <input type="color" name="color" value={formData.color} onChange={handleChange} className="h-10 border p-1 rounded" />
@@ -67,7 +66,7 @@ const OverlayEditor = ({ overlay, onSave, onDelete, onClose }) => {
         <input type="number" name="fontSize" value={parseInt(formData.fontSize)} onChange={(e) => setFormData(prev => ({ ...prev, fontSize: `${e.target.value}px` }))} className="border p-2 rounded" />
       </div>
 
-      {/* Action Buttons */}
+      {}
       <div className="flex justify-between pt-4 border-t">
         <button
           type="submit"
